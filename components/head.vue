@@ -10,10 +10,10 @@
 
       <!-- 菜单栏 -->
       <el-row type="flex" class="navs">
-        <nuxt-link to="/">首页</nuxt-link>
-        <nuxt-link to="/post">旅游攻略</nuxt-link>
-        <nuxt-link to="/hotel">酒店</nuxt-link>
-        <nuxt-link to="/air">国内机票</nuxt-link>
+        <nuxt-link to="/" :class="{'nuxt-link-exact-active nuxt-link-active':$route.path == '/'}">首页</nuxt-link>
+        <nuxt-link to="/post" :class="{'nuxt-link-exact-active':$route.path == '/post'}">旅游攻略</nuxt-link>
+        <nuxt-link to="/hotel" :class="{'nuxt-link-exact-active':$route.path == '/hotel'}">酒店</nuxt-link>
+        <nuxt-link to="/air" :class="{'nuxt-link-exact-active':$route.path == '/air'}">国内机票</nuxt-link>
       </el-row>
 
       <!-- 登录/用户信息 -->
