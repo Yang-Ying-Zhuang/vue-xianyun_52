@@ -40,6 +40,11 @@ export default {
       ],
     };
   },
+  watch:{
+    route(){
+      console.log(this.$route.path);
+    }
+  },
   methods: {
     myclick(index){
       // 切换菜单栏
@@ -53,7 +58,7 @@ export default {
     // 搜索
     mysearch(){
       const index = this.tabs[this.currentIndex]
-      console.log(index);
+      // console.log(index);
       this.$router.push({path:index.url + this.userkey})
     }
   },
@@ -63,7 +68,7 @@ export default {
       url: "/scenics/banners",
     })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         this.banners = res.data.data;
       })
       .catch((err) => {

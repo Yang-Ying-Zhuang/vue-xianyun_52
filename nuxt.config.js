@@ -29,7 +29,9 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    // 使用插件还原本地存储，登陆刷新效果保持还在, ssr服务器设置为false
+    { src: '@/plugins/localStorage', ssr:false} 
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
