@@ -51,10 +51,12 @@ export default {
   },
   methods: {
     userclick() {
+      // 二次验证
       this.$refs.refuser.validate((valid) => {
         if (valid) {
-          //封装异步请求
+          //封装异步请求,操作异步登录功能
           this.$store.dispatch("user/loginActions",this.form)
+
           .then(res=>{
             // console.log(res);
             this.$message({ message: "登录成功", type: "success" });

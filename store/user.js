@@ -12,10 +12,14 @@ export const mutations = {
     // state.userinfo = data
     state.userinfo.token = data.token,
       state.userinfo.user = data.user
+  },
+   // 清除用户数据
+   eliminate(state){
+    state.userinfo = {}
   }
 }
 
-// 定义actions
+// 定义actions:处理异步
 export const actions = {
   // 将登陆操作封装到actions
   loginActions(store, canshu) {
@@ -23,17 +27,14 @@ export const actions = {
       url: "/accounts/login",
       method: "post",
       data: canshu,
-      
+
     }).then(res => {
      store.commit("setUserInfo", res.data)
      //一定要返回 return 否则方面访问不了数据
      return res
-
-    }).catch(err => {
-      return err
     })
-
 
   }
 
 }
+

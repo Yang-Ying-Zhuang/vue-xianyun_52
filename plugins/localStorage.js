@@ -1,3 +1,4 @@
+// 第三方插件，解决刷新功能
 import createPersistedState from 'vuex-persistedstate'
 
 export default ({store}) => {

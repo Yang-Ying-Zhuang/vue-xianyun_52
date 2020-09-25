@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       banners: [], //轮播图数据
-      userkey:"",  // 搜索
+      userkey:"",  // 搜索框的值
       currentIndex:0,
       tabs: [  // 搜索
         { name: "攻略", desc: "搜索城市", url:"/post?city="},
@@ -41,7 +41,7 @@ export default {
     };
   },
   watch:{
-    route(){
+    $route(){
       console.log(this.$route.path);
     }
   },

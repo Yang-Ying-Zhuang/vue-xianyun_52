@@ -27,7 +27,7 @@
             </nuxt-link>
             <i class="el-icon-caret-bottom el-icon--right"></i>
           </el-row>
-          <el-dropdown-menu slot="dropdown">
+          <el-dropdown-menu slot="dropdown" class="ger">
             <el-dropdown-item>
               <nuxt-link to="#">个人中心</nuxt-link>
             </el-dropdown-item>
@@ -46,12 +46,18 @@
 <script>
 export default {
   methods: {
-    // 用户退出
-    handleLogout() {},
+    // 用户退出登录
+    handleLogout() {
+      this.$store.commit("user/eliminate")
+    },
   },
 };
 </script>
 <style scoped lang="less">
+.ger{
+  width: 80px ;
+  text-align: center;
+}
 .header {
   height: 60px;
   line-height: 60px;

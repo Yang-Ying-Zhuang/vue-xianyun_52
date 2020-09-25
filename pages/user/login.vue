@@ -17,7 +17,7 @@
         <LoginForm v-if="currentTab == 0" class="mylog"/>
 
         <!-- 注册功能组件 -->
-        <RegisterForm v-if="currentTab == 1"/>
+        <RegisterForm v-if="currentTab == 1" @resclick="currentTab = 0"/>
       </div>
     </el-row>
    
