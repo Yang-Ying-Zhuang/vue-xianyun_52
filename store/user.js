@@ -27,7 +27,7 @@ export const actions = {
       url: "/accounts/login",
       method: "post",
       data: canshu,
-
+      
     }).then(res => {
      store.commit("setUserInfo", res.data)
      //一定要返回 return 否则方面访问不了数据

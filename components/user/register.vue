@@ -114,6 +114,7 @@ export default {
           .catch((err) => {
             console.log(err);
           });
+          
       } else {
         this.$confirm(`验证码有误，请重新输入`, "提示", {
           confirmButtonText: "确定",

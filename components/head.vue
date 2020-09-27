@@ -10,10 +10,28 @@
 
       <!-- 菜单栏 -->
       <el-row type="flex" class="navs">
-        <nuxt-link to="/" :class="{'nuxt-link-exact-active nuxt-link-active':$route.path == '/'}">首页</nuxt-link>
-        <nuxt-link to="/post" :class="{'nuxt-link-exact-active':$route.path == '/post'}">旅游攻略</nuxt-link>
-        <nuxt-link to="/hotel" :class="{'nuxt-link-exact-active':$route.path == '/hotel'}">酒店</nuxt-link>
-        <nuxt-link to="/air" :class="{'nuxt-link-exact-active':$route.path == '/air'}">国内机票</nuxt-link>
+        <nuxt-link
+          to="/"
+          :class="{
+            'nuxt-link-exact-active nuxt-link-active': $route.path == '/',
+          }"
+          >首页</nuxt-link
+        >
+        <nuxt-link
+          to="/post"
+          :class="{ 'nuxt-link-exact-active': $route.path == '/post' }"
+          >旅游攻略</nuxt-link
+        >
+        <nuxt-link
+          to="/hotel"
+          :class="{ 'nuxt-link-exact-active': $route.path == '/hotel' }"
+          >酒店</nuxt-link
+        >
+        <nuxt-link
+          to="/air"
+          :class="{ 'nuxt-link-exact-active': $route.path == '/air' }"
+          >国内机票</nuxt-link
+        >
       </el-row>
 
       <!-- 登录/用户信息 -->
@@ -22,8 +40,13 @@
         <el-dropdown v-if="$store.state.user.userinfo.token">
           <el-row type="flex" align="middle" class="el-dropdown-link">
             <nuxt-link to="#">
-              <img :src="$axios.defaults.baseURL + $store.state.user.userinfo.user.defaultAvatar" />
-              {{$store.state.user.userinfo.user.nickname}}
+              <img
+                :src="
+                  $axios.defaults.baseURL +
+                  $store.state.user.userinfo.user.defaultAvatar
+                "
+              />
+              {{ $store.state.user.userinfo.user.nickname }}
             </nuxt-link>
             <i class="el-icon-caret-bottom el-icon--right"></i>
           </el-row>
@@ -38,7 +61,9 @@
         </el-dropdown>
 
         <!-- 不存在用户信息展示登录注册链接 -->
-        <nuxt-link to="/user/login" class="account-link" v-else>登录 / 注册</nuxt-link>
+        <nuxt-link to="/user/login" class="account-link" v-else
+          >登录 / 注册</nuxt-link
+        >
       </el-row>
     </el-row>
   </header>
@@ -48,14 +73,18 @@ export default {
   methods: {
     // 用户退出登录
     handleLogout() {
-      this.$store.commit("user/eliminate")
+      this.$store.commit("user/eliminate"),
+        this.$message({
+          message:"退出成功",
+          type: "success",
+        });
     },
   },
 };
 </script>
 <style scoped lang="less">
-.ger{
-  width: 80px ;
+.ger {
+  width: 80px;
   text-align: center;
 }
 .header {
